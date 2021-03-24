@@ -1,0 +1,88 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(90deg, #f8f7fc 20px, transparent 1%) center,
+    linear-gradient(#f8f7fc 20px, transparent 1%) center, #5cb3ec;
+  background-size: 22px 22px;
+  font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  height: 100vh;
+}
+
+.summary {
+  padding-top: 3rem;
+  background-color: #f8f7fc;
+  text-align: center;
+}
+
+.portrait img {
+  width: 256px;
+  border-radius: 50%;
+}
+
+.contact {
+  margin: 0 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-row {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+
+ul.social > li {
+  display: inline-block;
+  zoom: 1;
+}
+
+.bio {
+  background-color: #eee;
+  padding-top: 2rem;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.job {
+  display: flex;
+  border: 1px solid pink;
+}
+
+.job-side {
+  border: 1px solid green;
+}
+
+.job-title {
+  margin: 2px;
+  border: 1px solid red;
+}
+
+.job-content {
+  border: 1px solid blue;
+}
+
+@media screen and (min-width: 992px) {
+  .wrapper {
+    width: 800px;
+    flex-direction: row;
+  }
+
+  .summary {
+    padding-right: 1rem;
+  }
+
+  .contact {
+    margin: 0 2rem;
+  }
+
+  .bio {
+    padding-left: 10px;
+  }
+}
