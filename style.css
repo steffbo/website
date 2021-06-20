@@ -79,14 +79,14 @@ h2, h3 {
   padding-right: 6px;
 }
 
-#job {
-  margin: -20px 0 0 20px;
-}
-
 .biography {
   background-color: #fff;
   font-size: 0.9rem;
   width: 100%;
+}
+
+#job {
+  margin: -20px 0 0 20px;
 }
 
 .job {  
@@ -147,8 +147,11 @@ h2, h3 {
   width: 84% !important;
 }
 
+.education {
+  margin: 0 20px 0;
+}
+
 .education-header {
-  margin: 0 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -171,7 +174,7 @@ h2, h3 {
   color: #58677c;
 }
 
-.education-time {
+.education-right {
   color: #999;
   align-self: center;
 }
@@ -239,7 +242,7 @@ footer {
 
 @media screen and (max-width: 992px) {
   .biography {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   .name {
@@ -255,6 +258,10 @@ footer {
   }
 
   .job-header-company, .education-company {
+    font-size: 1.6em;
+  }
+
+  .job-header-right, .education-right {
     font-size: 1.6em;
   }
 
