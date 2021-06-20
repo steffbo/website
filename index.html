@@ -16,53 +16,48 @@
         <div class="portrait">
           <img src="portrait.png" />
         </div>
-        <div class="name">
-          <h1>Stefan Remer</h1>
-        </div>
-        <div class="title">
-          <h2>Senior Backend Engineer</h2>
-        </div>
-
-        <div class="contact">
-          <div class="contact-row">
-            <div><img src="pin.png" /></div>
-            <div>Berlin, Germany</div>
+        <div class="header">
+          <div class="name">
+            <h1>Stefan Remer</h1>
           </div>
-          <div class="contact-row">
-            <div><img src="mail.png" /></div>
-            <div>stefan@remer.cc</div>
+          <div class="title">
+            <h2>Senior Backend Engineer</h2>
+          </div>
+
+          <div class="contact">
+            <div class="contact-row">
+              <div><img src="pin.png" /></div>
+              <div>Berlin, Germany</div>
+            </div>
+            <div class="contact-row">
+              <div><img src="mail.png" /></div>
+              <div>stefan@remer.cc</div>
+            </div>
           </div>
         </div>
 
         <hr />
 
         <ul class="social">
-          <li>
-            <a
-              href="https://linkedin.com/in/stefan-remer/"
-              target="_blank"
-              ><img src="linkedin.png"
-            /></a>
-          </li>
-          <li>
-            <a href="https://github.com/steffbo" target="_blank"><img src="github.png"
-            /></a>
-          </li>
+          <li><a href="https://linkedin.com/in/stefan-remer/" target="_blank"><img src="linkedin.png"/></a></li>
+          <li><a href="https://github.com/steffbo" target="_blank"><img src="github.png"/></a></li>
+          <li><a href="https://stackoverflow.com/users/651100/" target="_blank"><img src="stackoverflow.png"/></a></li>
         </ul>
       </div>
 
       <div class="biography">
         <section id="intro">
           <h1>Hi, I'm Stefan!</h1>
-          <span class="brief">Technical leader with 10 years of experience developing software.
+          <div class="brief">Technical leader with 10 years of experience developing software.
             My focus is providing scalable APIs for data driven applications with millions of data points.
-            I update myself regularly about newest tools and trends in the industry. 
-          </span>
+            I keep myself updated about newest tools and trends in the industry by reading r/programming, watching YouTube
+            and checking documentation for promising tools. 
+          </div>
         </section>
 
-        <h2>Work experience</h2>
-        <hr/>
         <section id="jobs">
+          <h2>Work experience</h2>
+          <hr/>
           <div class="job">
             <div class="job-header">
               <div class="job-header-left">
@@ -83,6 +78,7 @@
                 <li>Concepting Microservice architecture and business domain modeling</li>
                 <li>Design and implementation of restful APIs</li>
                 <li>Long term planning about technical landscape</li>
+                <li>Recruitment of other backend devs</li>
               </ul>
             </div>
           </div>
@@ -93,7 +89,7 @@
             <div class="job-header">
               <div class="job-header-left">
                 <div class="job-header-title">Software Developer</div>
-                <div class="job-header-company">Brüder Schlau</div>
+                <div class="job-header-company">Br&uuml;der Schlau</div>
               </div>
               <div class="job-header-right">2016 - 2018</div>
             </div>
@@ -106,7 +102,7 @@
                 <li>Co-project management for e-commerce solution</li>
                 <li>Collaborating with devs from an agency</li>
                 <li>Groovy data exports</li>
-                <li>Atlassian tools admin</li>
+                <li>Inhouse administration and consultation for JIRA and Conflunce</li>
               </ul>
             </div>
           </div>
@@ -135,9 +131,9 @@
 
         </section>
 
-        <h2>Education</h2>
-        <hr/>
         <section id="education">
+          <h2>Education</h2>
+          <hr/>
           <div class="education-header">
             <div class="education-left">
               <div class="education-title">IT specialist for software development</div>
@@ -147,29 +143,30 @@
           </div>
         </section>
 
-        <h2>Projects</h2>
-        <hr/>
+        
         <section id="projects">
+          <h2>Projects</h2>
+          <hr/>  
           <div class="project-title">
-            <a href="https://woofl.es">Woofles</a>
+            <a href="https://woofl.es" target="_blank">Woofles</a>
           </div>
           <div class="project-description">
             Bookmark directory that can be filtered with tags. 
             Meant to serve as a private substitute after del.icio.us was shut down.
           </div>
-          <hr/>
+          <hr class="project-devider"/>
           <div class="project-title">Intercise</div>
           <div class="project-description">
              Timer for workout routines with customizable times for work and break periods.
           </div>
-          <hr/>
+          <hr class="project-devider"/>
           <div class="project-title">Various</div>
           <div class="project-description">
-            Self hosting Bitwarden, Nextcloud, Emby and small websites on Raspberry Pi's.
+            Self hosting Bitwarden, Nextcloud, Emby and static websites on Raspberry Pi's.
           </div>
         </section>
 
-        <section id="frameworks">
+        <section id="skills">
           <h2>Frameworks</h2>
           <hr/>
           <ul class="skills">
@@ -178,10 +175,8 @@
             <li><span class="skill-badge">Micronaut</span></li>
             <li><span class="skill-badge">React</span></li>
           </ul>
-        </section>
 
-        <section id="languages">
-          <h2>Languages</h2>
+          <h2>Programming</h2>
           <hr/>
           <ul class="skills">
             <li><span class="skill-badge">Groovy</span></li>
@@ -190,16 +185,15 @@
             <li><span class="skill-badge">Kotlin</span></li>
             <li><span class="skill-badge">JavaScript</span></li>
             <li><span class="skill-badge">Python</span></li>
+            <li><span class="skill-badge">Go</span></li>
           </ul>
-        </section>
 
-        <section id="others">
           <h2>Other tech</h2>
           <hr/>
           <ul class="skills">
             <li><span class="skill-badge badge-others">Git</span></li>
             <li><span class="skill-badge badge-others">MySQL</span></li>
-            <li><span class="skill-badge badge-others">Nginx</span></li>
+            <li><span class="skill-badge badge-others">nginx</span></li>
             <li><span class="skill-badge badge-others">Docker</span></li>
             <li><span class="skill-badge badge-others">Elasticsearch</span></li>
             <li><span class="skill-badge badge-others">Redis</span></li>
@@ -212,6 +206,27 @@
             <li></li>
           </ul>
         </section>
+
+        <section id="languages">
+          <h2>Languages</h2>
+          <hr/>
+            <ul>
+              <li>German (Native)</li>
+              <li>English (Professional)</li>
+            </ul>
+        </section>
+
+        <section id="hobbies">
+          <h2>Hobbies</h2>
+          <hr/>
+            <ul>
+              <li>Fitness (HIIT, bodyweight workouts)</li>
+              <li>Documentaries (climate change, nutrition, tech)</li>
+              <li>Podcasts (engineering, leadership, climate change, psychology)</li>
+              <li>Enjoying nature</li>
+            </ul>
+        </section>
+
       </div>
 
     </div>

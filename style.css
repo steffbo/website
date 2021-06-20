@@ -2,7 +2,8 @@ body {
   padding: 0;
   margin: 0;
   background-image: url("global-warming-stripes.png");
-  background-size: cover;
+  background-repeat: repeat-y;
+  background-size: contain;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -28,6 +29,10 @@ a {
   color: #224b79;
 }
 
+.name {
+  margin-bottom: -30px;
+}
+
 .portrait img {
   width: 256px;
   border-radius: 50%;
@@ -51,6 +56,10 @@ ul.social > li {
   zoom: 1;
 }
 
+h1 {
+  margin-bottom: 4px;
+}
+
 h2, h3 {
   margin-left: 10px;
   color: #3070b8;
@@ -66,7 +75,8 @@ h2, h3 {
 }
 
 .brief {
-  
+  font-size: larger;
+  padding-right: 6px;
 }
 
 #job {
@@ -75,7 +85,6 @@ h2, h3 {
 
 .biography {
   background-color: #fff;
-  padding-top: 2rem 2rem;
   font-size: 0.9rem;
   width: 100%;
 }
@@ -120,9 +129,6 @@ h2, h3 {
   font-style: italic;
 }
 
-.job-content {
-}
-
 .job-content ul {
   margin: 4px 0;
   list-style: none;
@@ -138,14 +144,11 @@ h2, h3 {
 
 .job-devider {
   margin-top: 10px !important;
-  width: 70% !important;
-}
-
-#education {
-  margin: 0 20px;
+  width: 84% !important;
 }
 
 .education-header {
+  margin: 0 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -173,12 +176,9 @@ h2, h3 {
   align-self: center;
 }
 
-#projects {
-  margin: 0 20px;
-}
-
-#projects hr {
-  margin: 10px 0;
+.project-devider {
+  margin-top: 10px !important;
+  width: 90% !important;
 }
 
 .project-title {
@@ -197,8 +197,7 @@ h2, h3 {
 .skill-badge {
   color: #fff;
   background-color: #4a94e9;
-  padding-right: 0.6em;
-  padding-left: 0.6em;
+  padding: 0.1em 0.6em;
   border-radius: 10rem;
 }
 
@@ -235,5 +234,74 @@ footer {
 
   footer {
     width: 800px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .biography {
+    font-size: 1rem;
+  }
+
+  .name {
+    font-size: 1.2em;
+  }
+
+  .contact-row {
+    font-size: 1.5rem;
+  }
+
+  .job-header-title, .education-title {
+    font-size: 2em;
+  }
+
+  .job-header-company, .education-company {
+    font-size: 1.6em;
+  }
+
+  .skill-badge {
+    font-size: 1.6em;
+  }
+}
+
+@media print {
+  body {
+    background-image: none;
+  }
+
+  .portrait img {
+    width: 156px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  .summary {
+    background-color: #fff;
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .name {
+    margin-top: -20px;
+  }
+
+  .title {
+    margin-bottom: -10px;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .contact {
+    margin: 0 20%;
+  }
+
+  .social {
+    visibility: hidden;
   }
 }
