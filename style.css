@@ -311,4 +311,12 @@ footer {
   .social {
     visibility: hidden;
   }
+
+  .job-header {
+    margin-top: -8px;
+  }
+
+  footer {
+    visibility: hidden;
+  }
 }
