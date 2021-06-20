@@ -131,15 +131,6 @@ h2, h3 {
 
 .job-content ul {
   margin: 4px 0;
-  list-style: none;
-}
-
-.job-content li::before {
-  content: "\2022";
-  color: #4a94e9;
-  display: inline-block;
-  width: 8px;
-  margin-left: -20px;
 }
 
 .job-devider {
