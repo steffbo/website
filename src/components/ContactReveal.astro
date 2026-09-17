@@ -1,0 +1,49 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  kind: "email" | "phone";
+  appearance?: "action" | "list";
+}
+
+const { kind, appearance = "list" } = Astro.props;
+const label = kind === "email" ? "Show email" : "Show phone number";
+---
+
+<button class:list={["contact-reveal", `contact-reveal-${appearance}`, appearance === "action" && "button button-primary"]} type="button" data-contact={kind}>
+  <Icon name={kind} />
+  <span data-contact-label>{label}</span>
+</button>
+
+<script is:inline>
+  const contactData = {
+    email: [115, 116, 101, 102, 97, 110, 64, 114, 101, 109, 101, 114, 46, 99, 99],
+    phone: [43, 52, 57, 32, 49, 55, 50, 32, 54, 50, 52, 51, 49, 52, 53],
+  };
+
+  if (!window.__contactRevealInstalled) {
+    window.__contactRevealInstalled = true;
+
+    document.addEventListener("click", (event) => {
+      if (!(event.target instanceof Element)) return;
+
+      const button = event.target.closest("button[data-contact]");
+      if (!button) return;
+
+      const kind = button.dataset.contact;
+      const encodedValue = contactData[kind];
+      if (!encodedValue) return;
+
+      const value = String.fromCharCode(...encodedValue);
+      const link = document.createElement("a");
+
+      link.className = button.className;
+      link.href = kind === "email" ? `mailto:${value}` : `tel:${value.replaceAll(" ", "")}`;
+      link.setAttribute("aria-label", kind === "email" ? `Email ${value}` : `Call ${value}`);
+      link.append(...button.childNodes);
+      const label = link.querySelector("[data-contact-label]");
+      if (label) label.textContent = value;
+      button.replaceWith(link);
+    });
+  }
+</script>

@@ -1,0 +1,115 @@
+---
+import Footer from "../components/Footer.astro";
+import ContactReveal from "../components/ContactReveal.astro";
+import Header from "../components/Header.astro";
+import Icon from "../components/Icon.astro";
+import { cv } from "../data/cv";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={cv.description} />
+    <link id="favicon" rel="icon" type="image/png" href="/favicon-light.png" />
+    <meta property="og:title" content={`${cv.name} - ${cv.title}`} />
+    <meta property="og:description" content={cv.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cv.remer.cc" />
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        document.documentElement.dataset.theme = savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+    <title>{cv.name} - {cv.title}</title>
+  </head>
+  <body>
+    <Header />
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Software engineering · Berlin</p>
+          <h1 id="page-title">Stefan<br /><em>Remer</em></h1>
+          <p class="hero-title">{cv.title}</p>
+          <div class="hero-actions" data-print-hidden>
+            <ContactReveal kind="email" appearance="action" />
+            {cv.resumePdf && <a class="button button-secondary" href={cv.resumePdf} download>Download résumé <Icon name="download" /></a>}
+          </div>
+          <div class="hero-social" data-print-hidden aria-label="Professional profiles">
+            <a href={cv.social.github} target="_blank" rel="noopener noreferrer"><Icon name="github" />GitHub</a>
+            <a href={cv.social.linkedin} target="_blank" rel="noopener noreferrer"><Icon name="linkedin" />LinkedIn</a>
+            <a href={cv.social.stackoverflow} target="_blank" rel="noopener noreferrer"><Icon name="stackoverflow" />Stack Overflow</a>
+          </div>
+        </div>
+        <div class="hero-aside">
+          <img class="portrait" src="/profile-picture.jpeg" alt="Portrait of Stefan Remer" width="1800" height="1440" />
+          <div class="contact-list">
+            <ContactReveal kind="email" />
+            <ContactReveal kind="phone" />
+            <p><Icon name="location" /><span>{cv.location}</span></p>
+            <a href={cv.website} target="_blank" rel="noopener noreferrer"><Icon name="external" /><span>{cv.website}</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section intro" id="about" aria-labelledby="about-title">
+        <div class="section-label"><span>01</span><h2 id="about-title">About</h2></div>
+        <div class="section-body">
+          <p class="lead">{cv.about}</p>
+        </div>
+      </section>
+
+      <section class="content-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-label"><span>02</span><h2 id="experience-title">Experience</h2></div>
+        <div class="section-body timeline">
+          {cv.experience.map((role) => (
+            <article class="experience-card">
+              <header>
+                <div>
+                  <p class="company">{role.company}</p>
+                  <h3>{role.title}</h3>
+                </div>
+                <p class="date-range">{role.dateRange}</p>
+              </header>
+              <ul>{role.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="content-section compact-section" id="education" aria-labelledby="education-title">
+        <div class="section-label"><span>03</span><h2 id="education-title">Education</h2></div>
+        <div class="section-body education-list">
+          {cv.education.map((education) => <p><strong>{education.degree}</strong><span>{education.dateRange}</span></p>)}
+        </div>
+      </section>
+
+      <section class="content-section compact-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-label"><span>04</span><h2 id="projects-title">Projects</h2></div>
+        <div class="section-body project-list">
+          {cv.projects.map((project) => <article class="project-card project-card-simple"><h3>{project}</h3></article>)}
+        </div>
+      </section>
+
+      <section class="content-section compact-section" id="skills" aria-labelledby="skills-title">
+        <div class="section-label"><span>05</span><h2 id="skills-title">Skills &amp; languages</h2></div>
+        <div class="section-body details-grid">
+          <div>
+            <h3>Skills</h3>
+            <ul class="skill-groups">{cv.skills.map((group) => <li>{group.join(", ")}</li>)}</ul>
+          </div>
+          <div>
+            <h3>Languages</h3>
+            <p>{cv.languages.join(" · ")}</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
